@@ -1,0 +1,37 @@
+<div class="container-fluid pt-5" id="service">
+    <div class="container">
+        <div class="position-relative d-flex align-items-center justify-content-center">
+            <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Gallery</h1>
+            <h1 class="position-absolute text-uppercase text-primary">My Projects</h1>
+        </div>
+        <div class="row pb-3">
+            <div class="col-lg-4 col-md-6 " *ngFor="let repo of repositories">
+
+                <div class="ag-courses_box ">
+                    <div class="ag-courses_item">
+                        <a href={{repo.html_url}} class="ag-courses-item_link">
+                            <div class="ag-courses-item_bg"></div> 
+                            <div class="ag-courses-item_title">{{repo.name}}</div>
+                            <p  class="ag"> This project focuses on: <strong>{{ repo.description }}</strong>. 
+                                    It is implemented using: <span>{{ repo.language }}</span>. 
+                                    The last update was on: <span>{{ repo.updated_at }}</span>. 
+                            </p>
+                            <div class="d-flex justify-content-between ">
+                                <div class="ag-courses-item_date-box ">
+                                        {{repo.stargazers_count}}
+                                        <span class="ag-courses-item_date"><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="ag-courses-item_date-box">
+                                        {{repo.watchers_count}}
+                                        <span class="ag-courses-item_date"><i class="far fa-eye"></i></span>
+                                </div>
+                            </div>
+                            
+                        </a>
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+    </div>
+</div>
